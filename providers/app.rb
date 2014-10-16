@@ -113,5 +113,5 @@ def export_path
 end
 
 def foreman_bin
-  node["foreman"]["foreman_bin"]
+  node["foreman"]["executable"]
 end
