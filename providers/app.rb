@@ -24,8 +24,8 @@ action :export do
   unless new_resource.content.nil?
     template procfile.to_s do
       mode 0644
-      owner new_resource.username
-      group new_resource.group || new_resource.username
+      owner new_resource.user
+      group new_resource.group || new_resource.user
 
       cookbook "foreman"
       source "procfile.conf.erb"
