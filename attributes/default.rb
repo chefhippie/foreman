@@ -48,7 +48,7 @@ default["foreman"]["export_format"] = value_for_platform_family(
 default["foreman"]["export_path"] = value_for_platform_family(
   "debian" => "/etc/inittab",
   "ubuntu" => "/etc/init",
-  "suse" => "/etc/systemd/user"
+  "suse" => "/etc/systemd/system"
 )
 
 default["foreman"]["executable"] = "/usr/bin/foreman"
