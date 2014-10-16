@@ -37,7 +37,8 @@ action :export do
   end
 
   execute "foreman_export_#{app}" do
-    command "#{foreman_bin} #{global_arguments} export #{export_arguments} #{export_format} #{export_path}"
+    command "#{foreman_bin} #{export_format} #{export_path} #{global_arguments} #{export_arguments}"
+
     cwd root.to_s
     action :run
 
