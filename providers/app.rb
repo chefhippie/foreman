@@ -46,8 +46,8 @@ action :export do
     cwd root.to_s
     action :run
 
-    user new_resource.user
-    group new_resource.group || new_resource.user
+    user "root"
+    group "root"
   end
 
   new_resource.updated_by_last_action(true)
