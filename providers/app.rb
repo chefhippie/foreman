@@ -41,7 +41,7 @@ action :export do
   end
 
   execute "foreman_export_#{app}" do
-    command "#{foreman_bin} #{export_format} #{export_path} #{global_arguments} #{export_arguments}"
+    command "#{foreman_bin} export #{export_format} #{export_path} #{global_arguments} #{export_arguments}"
 
     cwd root.to_s
     action :run
