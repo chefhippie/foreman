@@ -22,9 +22,9 @@ default["foreman"]["packages"] = value_for_platform_family(
   ),
   "ubuntu" => %w(
   ),
-  "suse" => %w(
-    rubygem-foreman
-  )
+  "suse" => [
+    "ruby#{node["languages"]["ruby"]["version"].to_f}-rubygem-foreman"
+  ]
 )
 
 default["foreman"]["gems"] = value_for_platform_family(
