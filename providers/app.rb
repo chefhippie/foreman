@@ -53,8 +53,6 @@ action :export do
   new_resource.updated_by_last_action(true)
 end
 
-protected
-
 def app
   new_resource.app || root.basename
 end
