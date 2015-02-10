@@ -20,8 +20,6 @@
 default["foreman"]["packages"] = value_for_platform_family(
   "debian" => %w(
   ),
-  "ubuntu" => %w(
-  ),
   "suse" => [
     "ruby#{node["languages"]["ruby"]["version"].to_f}-rubygem-foreman"
   ]
@@ -31,24 +29,23 @@ default["foreman"]["gems"] = value_for_platform_family(
   "debian" => %w(
     foreman
   ),
-  "ubuntu" => %w(
-    foreman
-  ),
   "suse" => %w(
 
   )
 )
 
-default["foreman"]["export_format"] = value_for_platform_family(
+default["foreman"]["export_format"] = value_for_platform(
   "debian" => "inittab",
   "ubuntu" => "upstart",
-  "suse" => "systemd"
+  "suse" => "systemd",
+  "opensuse" => "systemd"
 )
 
-default["foreman"]["export_path"] = value_for_platform_family(
+default["foreman"]["export_path"] = value_for_platform(
   "debian" => "/etc/inittab",
   "ubuntu" => "/etc/init",
-  "suse" => "/etc/systemd/system"
+  "suse" => "/etc/systemd/system",
+  "opensuse" => "/etc/systemd/system"
 )
 
 default["foreman"]["executable"] = "/usr/bin/foreman"
