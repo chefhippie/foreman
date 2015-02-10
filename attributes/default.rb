@@ -35,17 +35,17 @@ default["foreman"]["gems"] = value_for_platform_family(
 )
 
 default["foreman"]["export_format"] = value_for_platform(
-  "debian" => "inittab",
-  "ubuntu" => "upstart",
-  "suse" => "systemd",
-  "opensuse" => "systemd"
+  "debian" => { "default" => "inittab" },
+  "ubuntu" => { "default" => "upstart" },
+  "suse" => { "default" => "systemd" },
+  "opensuse" => { "default" => "systemd" }
 )
 
 default["foreman"]["export_path"] = value_for_platform(
-  "debian" => "/etc/inittab",
-  "ubuntu" => "/etc/init",
-  "suse" => "/etc/systemd/system",
-  "opensuse" => "/etc/systemd/system"
+  "debian" => { "default" => "/etc/inittab" },
+  "ubuntu" => { "default" => "/etc/init" },
+  "suse" => { "default" => "/etc/systemd/system" },
+  "opensuse" => { "default" => "/etc/systemd/system" }
 )
 
 default["foreman"]["executable"] = "/usr/bin/foreman"
