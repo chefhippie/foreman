@@ -38,14 +38,16 @@ default["foreman"]["export_format"] = value_for_platform(
   "debian" => { "default" => "inittab" },
   "ubuntu" => { "default" => "upstart" },
   "suse" => { "default" => "systemd" },
-  "opensuse" => { "default" => "systemd" }
+  "opensuse" => { "default" => "systemd" },
+  "opensuseleap" => { "default" => "systemd" }
 )
 
 default["foreman"]["export_path"] = value_for_platform(
   "debian" => { "default" => "/etc/inittab" },
   "ubuntu" => { "default" => "/etc/init" },
   "suse" => { "default" => "/etc/systemd/system" },
-  "opensuse" => { "default" => "/etc/systemd/system" }
+  "opensuse" => { "default" => "/etc/systemd/system" },
+  "opensuseleap" => { "default" => "/etc/systemd/system" }
 )
 
 default["foreman"]["executable"] = "/usr/bin/foreman"
